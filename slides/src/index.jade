@@ -1,0 +1,69 @@
+doctype html
+html
+  head
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1')
+    title HTML
+
+    link(href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet")
+    link(rel='stylesheet', type='text/css', href='build/build.css')
+
+  body
+
+    article
+
+      section
+        h1 Formation HTML
+        img(style="width: 40%" src="/images/logo-html.png")
+        p(class="author") <a href="https://github.com/Mcdostone/HTML-CSS" target="_blank">@mcdostone (Yann Prono)</a>
+
+
+      section(class="animated-background" style="background-image: url(images/start.gif)")
+        h1 Avant de commencer
+        p Text editor: <a href="https://www.sublimetext.com" target="_blank">Sublime text 2</a>
+        p Navigateur web: on evite <strong>IE</strong> s'il vous plait...
+
+
+      section
+        h1 Le HTML, c'est quoi ?
+        ul
+          li <i>Hyper Text Markup Language</i>
+          li Langage de balises
+          li Syntaxe basée sur le XML
+          li Réglementé par le <a href="https://validator.w3.org/" target="_blank">W3C</a>
+
+
+      section
+        h1 La balise
+        ul
+          li Mot clé: div, body, footer
+          li Mot clé entre chevrons
+          li Peut être utilisé par paire ou orpheline
+          li paire: 
+            code.language-markup                      
+              :escape
+                  <div>HTML for newbies</div>
+          li orpheline: 
+            code.language-markup                      
+              :escape
+                <br/>
+
+      section
+        h1 La balise
+        p On peut rajouter de l'information aux balises grâce aux attributs
+        p Les attributs peuvent permettre:
+        ul
+          li D'identifier une balise: <u>id</u>
+          li D'identifier un groupe de balises: <u>class</u>
+          li Donner des informations spécifiques: <u>href</u>, <u>src</u>
+
+          li 
+            code.language-markup
+              :escape
+                <img id="logo" src="logo.png" alt="Logo du site">
+          li 
+            code.language-markup                      
+              :escape
+                <a href="https://github.com/Mcdostone/HTML-CSS" target="_blank">Mon super dépot github</a>
+        
+    script(src='build/build.js')
