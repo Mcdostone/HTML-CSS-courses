@@ -14,14 +14,16 @@ html
 
       section
         h1 Formation HTML
+        h3 TELECOM Nancy Services
         img(style="width: 40%" src="/images/logo-html.png")
+
         p(class="author") <a href="https://github.com/Mcdostone/HTML-CSS" target="_blank">@mcdostone (Yann Prono)</a>
 
 
-      section(class="animated-background" style="background-image: url(images/start.gif)")
+      section(class="animated-background start")
         h1 Avant de commencer
-        p Text editor: <a href="https://www.sublimetext.com" target="_blank">Sublime text 2</a>
-        p Navigateur web: on evite <strong>IE</strong> s'il vous plait...
+        h3 Text editor: <a href="https://www.sublimetext.com" target="_blank">Sublime text 2</a>
+        h3 Navigateur web: on evite <strong>IE</strong> s'il vous plait...
 
 
       section
@@ -50,7 +52,7 @@ html
 
       section
         h1 La balise
-        p On peut rajouter de l'information aux balises grâce aux attributs
+        p On peut rajouter de l'information aux balises grâce aux attributs.
         p Les attributs peuvent permettre:
         ul
           li D'identifier une balise: <u>id</u>
@@ -65,5 +67,57 @@ html
             code.language-markup                      
               :escape
                 <a href="https://github.com/Mcdostone/HTML-CSS" target="_blank">Mon super dépot github</a>
-        
+
+
+      section
+        h1 Structure de base
+        pre
+          code.language-markup
+
+            :escape
+              <!doctype html>
+              <html lang="fr">
+            
+                <head>
+                  <!-- Configuration -->
+                  <meta charset="utf-8">
+                  <title>Windows sucks</title>
+                  <meta name="description" content="Why Windows sucks">
+                  <meta name="author" content="Bill Gates">
+                  <link rel="stylesheet" href="css/styles.css">  
+                </head>
+                
+                <body>
+                  <!-- Contenu -->
+                </body>
+
+              </html>
+
+      section
+        h1 quelques balises
+        pre
+          code.language-markup
+            :escape
+              <header>mon super menu...</header>
+              <div id="container">Choses à faire</div>
+              <ul>
+                <li>Vénérer le club studio</li>
+                <li>Cracher sur le BDE</li>
+                <li>Travailler la TRAD</li>
+              </ul>
+
+              <img src="http://www.commitstrip.com/wp-content/uploads/2016/05/Strip-Qui-de-la-poule-ou-de-loeuf-650-final.jpg">
+        <a href="example-1-1.html" target="_blank">Lien vers l'exemple</a>
+
+
+      section(class="animated-background fullscreen ugly")
+        h1 Mais ...
+
+      section
+        h2 Le HTML s'occupe uniquement du fond (contenu) mais pas de la forme !
+        h2 Pour la forme, on utilisera le CSS!
+
+      section(class="animated-background practice")
+        h1 Passons à la pratique !
+      
     script(src='build/build.js')
