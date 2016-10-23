@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>CSS - Introduction</title>
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="build/build.css">
+  </head>
+  <body>
+    <article>
+      <section>
+        <h1>Formation CSS</h1>
+        <h3>TELECOM Nancy Services</h3><img style="width: 40%" src="./images/logo-css.png">
+        <p class="author"><a href="https://github.com/Mcdostone/HTML-CSS" target="_blank">@mcdostone (Yann Prono)</a></p>
+      </section>
+      <section>
+        <h1>Le CSS, c'est quoi ?</h1>
+        <ul>
+          <li><i>Cascading Style Sheets</i></li>
+          <li>Langage informatique</li>
+          <li>Réglementé par le <a href="https://jigsaw.w3.org/css-validator/" target="_blank">W3C</a></li>
+          <li>Appliquer des règles de mises en forme sur des élements</li>
+          <li>=> Mettre en forme les balises HTML</li>
+        </ul>
+      </section>
+      <section>
+        <h1>une règle CSS est composée:</h1>
+        <ul>
+          <li>d'un selecteur </li>
+          <li>d'un ensemble de propriétés/valeurs</li><br>
+          <li>Le selecteur permet de selectionner le(s) élement(s) dans le document HTML via leur nom de balise, id ou class</li>
+          <li>Les propriétés définissent les règles de mise en forme (couleur, taille, espacement ...)</li>
+          <li>
+            <pre><code class="language-css">/* Selector */
+body { 
+  /* properties */
+  background-color: rgb(34, 49, 63);
+  color: white;
+}
+
+
+</code></pre>
+          </li>
+        </ul>
+      </section>
+      <section>
+        <h1>Fonctionnement</h1>
+        <ul>
+          <li>une règle s'appliquant à un élément de l'arbre s'applique également à ses descendants.</li>
+          <li>lorsque plusieurs règles héritées peuvent s'appliquer, c'est la plus proche qui s'applique.</li>
+          <li><a href="example-1-1.html" target="_blank">Lien vers l'exemple</a></li>
+        </ul>
+      </section>
+      <section class="animated-background fullscreen wtf">
+        <h1>WTF ! </h1>
+        <h2>Pourquoi mon lien est bleu ?</h2>
+        <h3><i>Il devrait être blanc étant donnée ma règle CSS !</i></h3>
+      </section>
+      <section>
+        <h1>c'est le moment de sortir l'inspecteur !</h1>
+        <ul>
+          <li>clique droit => <i>inspect / inspecter</i></li>
+          <li>selectionner le selecteur (bouton en haut à gauche)</li>
+          <li>Selectionner la balise a</li>
+        </ul>
+      </section>
+      <section>
+        <h3>Des règles de base sont par défault données par le navigateur web, notamment pour la balise <u>a</u></h3>
+        <ul>
+          <li><img src="./images/tree-1.svg"></li>
+        </ul>
+      </section>
+      <section>
+        <h1>D'autres selecteurs existent</h1>
+        <ul>
+          <li>
+            <pre><code class="language-css">/** Fond blanc pour le body et footer */
+body, footer {
+  background-color: white;
+}
+
+/** s'applique au p à l'intérieur de #container */
+#container p {
+  color: gray;
+  font-size: 2em;
+}
+</code></pre>
+          </li>
+        </ul>
+      </section>
+      <section>
+        <h1>Quelques propriétés</h1>
+        <pre><code class="language-css">* {
+  color: red; /** Couleur du texte */
+  background-color: #FFFFFF; /** Couleur d'arrère plan de l'élement */
+  font-size: 18px; /** taille du texte */
+  font-family: impact; /** Police à utiliser */
+  text-align: center; /** Alignement du texte */
+  opacity: 0.5; /** Opacité de l'élélement entre 0.0 et 1.0 */
+}
+</code></pre>
+        <p>N'hésitez pas à chercher la documentation sur internet</p>
+        <pour>savoir quelles valeurs peuvent prendre les propriétés: <a href="https://developer.mozilla.org/fr/docs/Web/CSS/Reference" target="_blank">MDN</a></pour>
+      </section>
+      <section class="animated-background fullscreen programming">
+        <h1>À vous de coder !</h1>
+      </section>
+      <section class="left">
+        <ul>
+          <li>Lancez votre éditeur de texte !</li>
+          <li>Ouvrez les fichiers dans le dossier exercices/</li><br>
+          <li>Dans un premier temps, on va créer notre fichier css. Créer un fichier <i>style.css</i> et enregistrer le dans le dossier exercices/</li>
+          <li>Il reste ensuite à importer le fichier CSS dans le fichier HTML en écrivant cette balise dans le fichier HTML:
+            <pre><code class="language-markup">&lt;head&gt;
+  ...
+  &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;style.css&quot;&gt;
+&lt;/head&gt;
+</code></pre>
+          </li>
+          <li>Inserer un petite règle dans ce fichier comme par exemple (afin de s'assurer que le fichier CSS est bien chargé dans le document HTML)
+            <pre><code class="language-css">body {
+  background-color: orange;
+}</code></pre>
+          </li>
+        </ul>
+      </section>
+      <section class="animated-background orange">
+        <h1>Maintenant, votre page HTML doit être de couleur orange !</h1>
+      </section>
+      <section class="left">
+        <h2>On va continuer notre site 0Gag !</h2>
+        <p>Vous pouvez soit récupérer le <i>index.html</i> du cours d'avant ou utiliser celui disponible.</p>
+        <p>On va lui apporter des couleurs différentes en gardant cependant la structure de base !</p><br>
+        <ul>
+          <li>Changer la couleur de l'arrière plan avec cette valeur: </li>
+          <pre><code class="language-css">#ecf0f1
+</code></pre>
+          <li>La police utilisée sera 'monospace' dans tout le document.</li>
+          <li>Les titres de chaque Gag aura comme couleur:
+            <pre><code class="language-css">/** Couleur de fond */
+#c0392b
+/** Couleur du texte */
+rgb(255, 255, 255)
+
+</code></pre>
+          </li>
+        </ul>
+      </section>
+      <section class="left">
+        <h2>Ajout de plus-value aux images</h2>
+        <ul>
+          <li>Ajouter un bordure rouge à chaque image de gag !</li>
+          <li>Pour cela, on peut selectionner l'image grâce à la class <i>gag</i>
+            <pre><code class="language-css">/** . + nom de la classe */
+/** Pour selectionner un id, on utilise # + id */
+.gag img {
+  /** Rechercher sur internet comment ajouter une bordure */
+  /** bordure simple de 4px de couleur #7f8c8d */
+}
+</code></pre>
+          </li>
+        </ul>
+      </section>
+      <section class="left">
+        <h2>Design du header</h2>
+        <ul>
+          <li>changer la couleur de l'arrière plan de la balise header avec du noir.</li>
+          <li>Pour rendre plus visible les liens dans le header, changer la couleur des éléments a imbriqués dans le header !</li>
+          <li>Agrandir la taille des éléments a dans le header à avec la valeur: 2em</li>
+        </ul>
+      </section>
+      <section class="left">
+        <h2>Design du nav</h2>
+        <ul>
+          <li>Changer la propriété background-color de l'élément nav avec la valeur rgb(192, 57, 43)</li>
+          <li>Changer la couleur des titres des éléments de la classe <i>tiny-gag</i> avec la valeur white</li>
+          <li>Appliquer la valeur <strong>bold</strong> au titres pour les accentuer (à vous de trouver la propriété)</li>
+          <li>On va enlever les listes à puces: Essayer de trouver deux selecteurs afin de répondre à ce besoin:
+            <pre><code class="language-css">/** Pour enlever la liste à puce */
+X {
+  list-style-type: none;
+}
+</code></pre>
+          </li>
+        </ul>
+      </section>
+      <section class="animated-background fullscreen success">
+        <h1>Congratulations !</h1>
+        <h2>Don't forget to validate your CSS </h2><a href="https://jigsaw.w3.org/css-validator/" target="_blank">W3C</a><br>
+        <h2>but ...</h2>
+      </section>
+      <section class="animated-background fullscreen ugly"></section>
+      <section>
+        <h1>On améliore cela tout de suite dans quelques slides !</h1>
+      </section>
+    </article>
+    <script src="build/build.js"></script>
+  </body>
+</html>
