@@ -1,21 +1,21 @@
 'use strict';
 
-  var gulp = require('gulp'),
-  gutil = require('gulp-util'),
-  plumber = require('gulp-plumber'),
-  rename = require('gulp-rename'),
-  connect = require('gulp-connect'),
-  browserify = require('gulp-browserify'),
-  uglify = require('gulp-uglify'),
-  stylus = require('gulp-stylus'),
-  autoprefixer = require('gulp-autoprefixer'),
-  csso = require('gulp-csso'),
-  del = require('del'),
-  through = require('through'),
-  opn = require('opn'),
-  ghpages = require('gh-pages'),
-  path = require('path'),
-  isDist = process.argv.indexOf('serve') === -1;
+let gulp = require('gulp'),
+gutil = require('gulp-util'),
+plumber = require('gulp-plumber'),
+rename = require('gulp-rename'),
+connect = require('gulp-connect'),
+browserify = require('gulp-browserify'),
+uglify = require('gulp-uglify'),
+stylus = require('gulp-stylus'),
+autoprefixer = require('gulp-autoprefixer'),
+csso = require('gulp-csso'),
+del = require('del'),
+through = require('through'),
+opn = require('opn'),
+ghpages = require('gh-pages'),
+path = require('path'),
+isDist = process.argv.indexOf('serve') === -1;
 
 var jade = require('jade')
 var gulpJade = require('gulp-jade')
@@ -23,6 +23,8 @@ var gulpJade = require('gulp-jade')
 jade.filters.escape = function(block) {
   return require('html-strings').escape(block)
 }
+
+
 
 gulp.task('js', ['clean:js'], function() {
   return gulp.src('src/scripts/main.js')
@@ -34,8 +36,19 @@ gulp.task('js', ['clean:js'], function() {
     .pipe(connect.reload());
 });
 
-gulp.task('html', ['clean:html'], function() {
-  return gulp.src('src/index.jade')
+gulp.task('examples', ['clean:examples'], function() {
+  gulp.src('src/example-1-1.jade')
+    .pipe(isDist ? through() : plumber())
+    .pipe(gulpJade({
+      jade: jade,
+      pretty: true
+    }))
+    .pipe(rename('example-1-1.html'))
+    .pipe(gulp.dest('dist'))
+})
+
+gulp.task('html', ['examples','clean:html'], function() {
+  gulp.src('src/index.jade')
     .pipe(isDist ? through() : plumber())
     .pipe(gulpJade({
       jade: jade,
@@ -73,6 +86,10 @@ gulp.task('clean', function(done) {
 
 gulp.task('clean:html', function(done) {
   del('dist/index.html', done);
+});
+
+gulp.task('clean:examples', function(done) {
+  del('dist/example-1-1.html', done);
 });
 
 gulp.task('clean:js', function(done) {

@@ -15,7 +15,7 @@ html
       section
         h1 Formation HTML
         h3 TELECOM Nancy Services
-        img(style="width: 40%" src="/images/logo-html.png")
+        img(style="width: 40%" src="./images/logo-html.png")
 
         p(class="author") <a href="https://github.com/Mcdostone/HTML-CSS" target="_blank">@mcdostone (Yann Prono)</a>
 
@@ -99,14 +99,15 @@ html
           code.language-markup
             :escape
               <header>mon super menu...</header>
-              <div id="container">Choses à faire</div>
-              <ul>
-                <li>Vénérer le club studio</li>
-                <li>Cracher sur le BDE</li>
-                <li>Travailler la TRAD</li>
-              </ul>
+              <div id="container">Choses à faire
+                <ul>
+                  <li>Vénérer le club studio</li>
+                  <li>Cracher sur le BDE</li>
+                  <li>Travailler la TRAD</li>
+                </ul>
 
-              <img src="http://www.commitstrip.com/wp-content/uploads/2016/05/Strip-Qui-de-la-poule-ou-de-loeuf-650-final.jpg">
+                <img src="http://www.commitstrip.com/wp-content/uploads/2016/05/Strip-Qui-de-la-poule-ou-de-loeuf-650-final.jpg">
+              </div>
         <a href="example-1-1.html" target="_blank">Lien vers l'exemple</a>
 
 
@@ -119,5 +120,91 @@ html
 
       section(class="animated-background practice")
         h1 Passons à la pratique !
-      
+
+      section
+        h1 Réaliser un site comme 
+        p Allez y jetez un coup d'oeil !
+        a(href="http://9gag.com/" target="_blank")
+          img(style="width: 30%" src="./images/pr0gramm.png")
+
+      section
+        h1 On peut découper le site en plusieurs parties:
+        ul
+          li Un menu en haut
+          li Le menu contient plusieurs liens vers d'autres pages
+          br
+
+          li Un bloc central contenant les gags
+          li Un gag est composé d'un titre et d'une image
+          br
+
+          li Un petit bloc à droite contenant d'autres gags
+          li Ces autres gags sont composés d'une image et d'un titre
+
+      section
+        h1 À vous de coder
+        h3 Création du menu
+        ul
+          li Créer les liens cliquables "Trending" et "Fresh" en vous aidant du lien déjà crée
+          li Imbriquer tous les liens crées dans une balise <i>header</i>
+            pre
+              code.language-markup
+                :escape
+                  <header>...</header>
+
+      section
+        h3 Création d'un gag
+        ul
+          li Créer un balise <u>h3</u> qui contiendra le titre d'un gag.
+
+          li Créer une balise <u>img</u> qui contient l'image associé au titre
+
+          li Imbriquer chaque gag (titre + image) dans une balise <u>div</u> qui aura comme class la valeur "gag"
+
+        pre
+          code.language-markup
+            :escape
+              <!-- Titles & URLs -->
+              Stupid Robot !
+                http://lorempicsum.com/futurama/450/400/1
+
+              Crazy monkey !
+                http://lorempicsum.com/futurama/450/400/2
+
+              Dat trick !
+                http://www.gifbin.com/bin/102015/1444064429_pope_francis_table_cloth_trick.gif
+              
+              When you don't know how fork() works !
+                http://lorempicsum.com/futurama/450/400/4
+
+
+      section
+        h3 Création du principal container
+        ul
+          li Mettez toutes les <u>div</u> (gag) dans une nouvelle <u>div</u> avec l'id "container"
+
+      section
+        h3 Création de la navbar
+        ul
+          li Créer un nouvelle balise <u>navbar</u>
+          li À l'intérieur de navbar, créer une div ayant la classe "tiny-gag". Cette div contiendra un titre <u>h4</u> ainsi qu'un balise <u>img</u> représentant l'image.
+
+        pre
+          code.language-markup
+            :escape
+              <!-- Titles & URLs -->
+              When you're the only girl at TN !
+                http://lorempicsum.com/futurama/450/200/5
+
+              When the SIC exam is arriving ...
+                http://lorempicsum.com/futurama/450/200/3
+
+              Me at Project management exam (CTRL+F)!
+                https://giphy.com/gifs/v9ofYSIvnZ79e/html5
+
+
+      section(class="animated-background fullscreen success")
+        h1 You succeed !
+
+
     script(src='build/build.js')
