@@ -159,7 +159,9 @@ html
 
           li Créer une balise <u>img</u> qui contient l'image associé au titre
 
-          li Imbriquer chaque gag (titre + image) dans une balise <u>div</u> qui aura comme class la valeur "gag"
+          li Imbriquer le gag (titre + image) dans une balise <u>div</u> qui aura comme class la valeur "gag"
+
+          li Faites cela pour toutes les titres et image qui suivent:
 
         pre
           code.language-markup
@@ -184,10 +186,11 @@ html
           li Mettez toutes les <u>div</u> (gag) dans une nouvelle <u>div</u> avec l'id "container"
 
       section
-        h3 Création de la navbar
+        h3 Création du nav
         ul
-          li Créer un nouvelle balise <u>navbar</u>
-          li À l'intérieur de navbar, créer une div ayant la classe "tiny-gag". Cette div contiendra un titre <u>h4</u> ainsi qu'un balise <u>img</u> représentant l'image.
+          li Créer un nouvelle balise <u>nav</u> à la suite de div#container
+          li À l'intérieur de nav, vous devez listez d'autres gags.
+          li Pour cela, utiliser le tag <u>ul</u> pour définir une liste et la tag <u>li</u> pour définir un item de cette liste. Chaque li aura la class "tiny-gag". Cette li contiendra un titre <u>h4</u> ainsi qu'un balise <u>img</u> représentant l'image.
 
         pre
           code.language-markup
@@ -200,7 +203,8 @@ html
                 http://lorempicsum.com/futurama/450/200/3
 
               Me at Project management exam (CTRL+F)!
-                https://giphy.com/gifs/v9ofYSIvnZ79e/html5
+                <!-- L'image se trouve dans le dossier du fichier HTML ! -->
+                ./fight.gif
 
 
       section(class="animated-background fullscreen success")
