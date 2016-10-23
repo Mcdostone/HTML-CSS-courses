@@ -6,6 +6,18 @@ body
 body *
 	color: white
 	font-family: 'Lato', sans-serif;
+	
+li, p
+	font-size: 1.2em
+	line-height: 1.2em
+	
+.black 
+	background: white
+	
+
+.black *
+	color: rgb(34, 49, 63) 
+	
 
 
 .bespoke-slide
@@ -26,8 +38,12 @@ body *
 	right: 0
 	top: 0
 	left: 0
+	
 
 
+.animated-background *
+	color: white
+	
 .animated-background:before
 	content: ''
 	z-index: -10
@@ -39,7 +55,7 @@ body *
 	background: rgba(0,0,0, 0.5)
 
 a 
-	color: white
+	//color: white
 	font-weight: 700
 	text-decoration: underline
 
@@ -73,3 +89,12 @@ a
 .programming
 	background-image: url(../images/programming.gif)
 	
+
+.bespoke-slidenumber 
+	position: absolute
+	bottom: 50px
+	right: 50px
+	
+.bespoke-progress-bar{	
+	background: #f14a29
+}

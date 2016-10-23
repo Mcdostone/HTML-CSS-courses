@@ -8,7 +8,10 @@ var bespoke = require('bespoke'),
   scale = require('bespoke-scale'),
   hash = require('bespoke-hash'),
   progress = require('bespoke-progress'),
-  forms = require('bespoke-forms');
+  forms = require('bespoke-forms'),
+  slidenumber = require('bespoke-slidenumber'),
+  loop = require('bespoke-loop');
+ 
 
 // Bespoke.js
 bespoke.from('article', [
@@ -20,8 +23,11 @@ bespoke.from('article', [
   scale(),
   hash(),
   progress(),
-  forms()
+  forms(),
+  slidenumber(),
+  loop()
 ]);
+  
 
 // Prism syntax highlighting
 // This is actually loaded from "bower_components" thanks to

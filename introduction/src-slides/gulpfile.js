@@ -134,3 +134,8 @@ gulp.task('build', ['js', 'html', 'css', 'images']);
 gulp.task('serve', ['connect', 'watch']);
 
 gulp.task('default', ['build']);
+
+gulp.task('export', ['build'], function(done) {
+  return gulp.src('dist/**/*')
+  .pipe(gulp.dest('../slides/'))
+})
