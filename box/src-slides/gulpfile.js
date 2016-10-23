@@ -37,7 +37,7 @@ gulp.task('js', ['clean:js'], function() {
 });
 
 gulp.task('examples', ['clean:examples'], function() {
-  gulp.src('src/example.jade')
+  gulp.src('src/example-1.jade')
     .pipe(isDist ? through() : plumber())
     .pipe(gulpJade({
       jade: jade,
@@ -46,7 +46,7 @@ gulp.task('examples', ['clean:examples'], function() {
     .pipe(rename('example-1.html'))
     .pipe(gulp.dest('dist'))
 
-  return gulp.src('src/styles/example-1.styl')
+    return gulp.src('src/styles/example.styl')
     .pipe(isDist ? through() : plumber())
     .pipe(stylus({
       // Allow CSS to be imported from node_modules and bower_components
@@ -102,7 +102,7 @@ gulp.task('clean:html', function(done) {
 });
 
 gulp.task('clean:examples', function(done) {
-  del('dist/example.html');
+  del('dist/example-1.html');
   del('dist/build/example.css', done);
 });
 
