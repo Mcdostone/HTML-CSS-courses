@@ -3,7 +3,7 @@ html
   head
     meta(charset='utf-8')
     meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1')
-    title HTML
+    title HTML - Introduction
 
     link(href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet")
     link(rel='stylesheet', type='text/css', href='build/build.css')
@@ -98,16 +98,24 @@ html
         pre
           code.language-markup
             :escape
-              <header>mon super menu...</header>
-              <div id="container">Choses à faire
-                <ul>
+              <header>mon super menu...</header> <!-- Header du site-->
+              <div id="container"> 
+                <p>Choses à faire</p> <!-- paragraphe -->
+                <!-- Saut de ligne -->
+                <br/>
+                <ul><!-- Création d'une liste -->
                   <li>Vénérer le club studio</li>
-                  <li>Cracher sur le BDE</li>
+                  <li>Cracher sur le BDE</li> <!-- Item d'une liste -->
                   <li>Travailler la TRAD</li>
                 </ul>
-
-                <img src="http://www.commitstrip.com/wp-content/uploads/2016/05/Strip-Qui-de-la-poule-ou-de-loeuf-650-final.jpg">
+                
+                <!-- Une image, balise orpheline-->
+                <img src="http://www.commitstrip.com/wp-content/uploads/2016/05/Strip-Qui-de-la-poule-ou-de-loeuf-650-final.jpg" alt="Comic strip">
+                
+                <!--Lien vers une page -->
+                <a href="https://developer.mozilla.org/fr/docs/Web/HTML/Element" target="_blank">De la doc HTML (à lire si vous êtes perdus...)</a> 
               </div>
+        
         <a href="example-1-1.html" target="_blank">Lien vers l'exemple</a>
 
 
@@ -141,8 +149,15 @@ html
           li Un petit bloc à droite contenant d'autres gags
           li Ces autres gags sont composés d'une image et d'un titre
 
+      section(class="animated-background fullscreen programming")
+        h1 À vous de coder !
+        h3 Lancez Sublime Text 2 (ou votre éditeur favori)
+        h3 Ouvrez le fichier <i>exercice-1.html</i> dans le dossier exercices/
+        h3 Ouvrez <i>exercice-1.html</i> avec votre navigateur web afin de visualiser la construction du document HTML !
+
+
+
       section
-        h1 À vous de coder
         h3 Création du menu
         ul
           li Créer les liens cliquables "Trending" et "Fresh" en vous aidant du lien déjà crée
@@ -190,7 +205,8 @@ html
         ul
           li Créer un nouvelle balise <u>nav</u> à la suite de div#container
           li À l'intérieur de nav, vous devez listez d'autres gags.
-          li Pour cela, utiliser le tag <u>ul</u> pour définir une liste et la tag <u>li</u> pour définir un item de cette liste. Chaque li aura la class "tiny-gag". Cette li contiendra un titre <u>h4</u> ainsi qu'un balise <u>img</u> représentant l'image.
+          li Pour cela, utiliser le tag <u>ul</u> pour définir une liste et la tag <u>li</u> pour définir un item de cette liste. 
+          li.bullet Chaque li aura la class "tiny-gag". Cette li contiendra un titre <u>h4</u> ainsi qu'un balise <u>img</u> représentant l'image.
 
         pre
           code.language-markup
@@ -209,6 +225,9 @@ html
 
       section(class="animated-background fullscreen success")
         h1 You succeed !
+        h2 Dont' forget to validate your document:
+        <a href="https://validator.w3.org/" target="_blank">W3C</a>
+
 
 
     script(src='build/build.js')
