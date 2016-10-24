@@ -60,7 +60,7 @@ gulp.task('examples', ['clean:examples'], function() {
     .pipe(connect.reload());
 })
 
-gulp.task('html', ['examples','clean:html'], function() {
+gulp.task('html', ['clean:html'], function() {
   gulp.src('src/index.jade')
     .pipe(isDist ? through() : plumber())
     .pipe(gulpJade({
@@ -130,7 +130,7 @@ gulp.task('open', ['connect'], function (done) {
 });
 
 gulp.task('watch', function() {
-  gulp.watch('src/**/*.jade', ['html']);
+  gulp.watch('src/**/*.jade', ['html', 'examples']);
   gulp.watch('src/styles/**/*.styl', ['css']);
   gulp.watch('src/images/**/*', ['images']);
   gulp.watch([
@@ -143,13 +143,17 @@ gulp.task('deploy', ['build'], function(done) {
   ghpages.publish(path.join(__dirname, 'dist'), { logger: gutil.log }, done);
 });
 
-gulp.task('build', ['js', 'html', 'css', 'images']);
+gulp.task('build', ['js', 'html', 'examples', 'css', 'images']);
 
 gulp.task('serve', ['connect', 'watch']);
 
 gulp.task('default', ['build']);
 
-gulp.task('export', ['build'], function(done) {
+gulp.task('clean:slides', function(done) {
+  del('../slides/', {force: true}, done)
+});
+
+gulp.task('export', ['clean:slides','build'], function(done) {  
   return gulp.src('dist/**/*')
   .pipe(gulp.dest('../slides/'))
 })

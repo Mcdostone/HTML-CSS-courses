@@ -135,7 +135,12 @@ gulp.task('serve', ['connect', 'watch']);
 
 gulp.task('default', ['build']);
 
-gulp.task('export', ['build'], function(done) {
+
+gulp.task('clean:slides', function(done) {
+  del('../slides/', {force: true}, done)
+});
+
+gulp.task('export', ['clean:slides','build'], function(done) {  
   return gulp.src('dist/**/*')
   .pipe(gulp.dest('../slides/'))
 })
