@@ -1,0 +1,234 @@
+doctype html
+html
+  head
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1')
+    title HTML - Introduction
+
+    link(href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet")
+    link(rel='stylesheet', type='text/css', href='build/build.css')
+
+  body
+
+    article
+
+      section
+        h1 Formation HTML
+        h3 TELECOM Nancy Services
+        img(style="width: 40%" src="./images/logo-html.png")
+
+        p(class="author") <a href="https://github.com/Mcdostone/HTML-CSS" target="_blank">@mcdostone (Yann Prono)</a>
+
+
+      section(class="animated-background start")
+        h1 Avant de commencer
+        h3 Text editor: <a href="https://www.sublimetext.com" target="_blank">Sublime text 2</a>
+        h3 Navigateur web: on évite <strong>IE</strong> s'il vous plait...
+
+
+      section
+        h1 Le HTML, c'est quoi ?
+        ul
+          li <i>Hyper Text Markup Language</i>
+          li Langage de balises
+          li Syntaxe basée sur le XML
+          li Réglementé par le <a href="https://validator.w3.org/" target="_blank">W3C</a>
+
+
+      section
+        h1 La balise
+        ul
+          li Mot clé: div, body, footer
+          li Mot clé entre chevrons
+          li Peut être utilisée par paire ou orpheline
+          li paire: 
+            code.language-markup                      
+              :escape
+                  <div>HTML for newbies</div>
+          li orpheline: 
+            code.language-markup                      
+              :escape
+                <br/>
+
+      section
+        h1 La balise
+        p On peut rajouter de l'information à une balise grâce à des attributs.
+        p Les attributs peuvent permettre:
+        ul
+          li D'identifier une balise: <u>id</u>
+          li D'identifier un groupe de balises: <u>class</u>
+          li Donner des informations spécifiques: <u>href</u>, <u>src</u>
+
+          li 
+            code.language-markup
+              :escape
+                <img id="logo" src="logo.png" alt="Logo du site">
+          li 
+            code.language-markup                      
+              :escape
+                <a href="https://github.com/Mcdostone/HTML-CSS" target="_blank">Mon super dépot github</a>
+
+
+      section
+        h1 Structure de base
+        pre
+          code.language-markup
+
+            :escape
+              <!doctype html>
+              <html lang="fr">
+            
+                <head>
+                  <!-- Configuration -->
+                  <meta charset="utf-8">
+                  <title>Windows sucks</title>
+                  <meta name="description" content="Why Windows sucks">
+                  <meta name="author" content="Bill Gates">
+                  <link rel="stylesheet" href="css/styles.css">  
+                </head>
+                
+                <body>
+                  <!-- Contenu -->
+                </body>
+
+              </html>
+
+      section
+        h1 quelques balises
+        pre
+          code.language-markup
+            :escape
+              <header>mon super menu...</header> <!-- Header du site-->
+              <div id="container"> 
+                <p>Choses à faire</p> <!-- paragraphe -->
+                <!-- Saut de ligne -->
+                <br/>
+                <ul><!-- Création d'une liste -->
+                  <li>Vénérer le club studio</li>
+                  <li>Cracher sur le BDE</li> <!-- Item d'une liste -->
+                  <li>Travailler la TRAD</li>
+                </ul>
+                
+                <!-- Une image, balise orpheline-->
+                <img src="http://www.commitstrip.com/wp-content/uploads/2016/05/Strip-Qui-de-la-poule-ou-de-loeuf-650-final.jpg" alt="Comic strip">
+                
+                <!--Lien vers une page -->
+                <a href="https://developer.mozilla.org/fr/docs/Web/HTML/Element" target="_blank">De la doc HTML (à lire si vous êtes perdus...)</a> 
+              </div>
+        
+        <a href="example-1-1.html" target="_blank">Lien vers l'exemple</a>
+
+
+      section(class="animated-background fullscreen ugly")
+        h1 Mais ...
+
+      section
+        h2 Le HTML s'occupe uniquement du fond (contenu) mais pas de la forme !
+        h2 Pour la forme, on utilisera le CSS!
+
+      section(class="animated-background practice")
+        h1 Passons à la pratique !
+
+      section
+        h1 Réaliser un site comme 
+        p Allez y jetez un coup d'oeil !
+        a(href="http://9gag.com/" target="_blank")
+          img(style="width: 30%" src="./images/pr0gramm.png")
+
+      section
+        h1 On peut découper le site en plusieurs parties:
+        ul
+          li Un menu en haut
+          li Le menu contient plusieurs liens vers d'autres pages
+          br
+
+          li Un bloc central contenant les gags
+          li Un gag est composé d'un titre et d'une image
+          br
+
+          li Un petit bloc à droite contenant d'autres gags
+          li Ces autres gags sont composés d'une image et d'un titre
+
+      section(class="animated-background fullscreen programming")
+        h1 À vous de coder !
+        h3 Lancer Sublime Text 2 (ou votre éditeur favori).
+        h3 Ouvrer le fichier <i>exercice.html</i> dans le dossier exercices/ et
+        h3 Ouvrer <i>exercice.html</i> avec votre navigateur web afin de visualiser la construction du document HTML !
+
+
+
+      section(class="left")
+        h2 Création du menu
+        ul
+          li Créer les liens cliquables "Trending" et "Fresh" en vous aidant du lien déjà crée.
+          li Imbriquer tous les liens crées dans une balise <i>header</i>.
+            pre
+              code.language-markup
+                :escape
+                  <header>...</header>
+
+      section(class="left")
+        h2 Création d'un gag
+        ul
+          li Créer un balise <u>h3</u> qui contiendra le titre d'un gag.
+          li Créer une balise <u>img</u> qui contient l'image associé au titre.
+          li Imbriquer le gag (titre + image) dans une balise <u>div</u> qui aura pour <i>class</i> la valeur "gag".
+          li Faites cela pour toutes les titres et images qui suivent:
+
+        pre
+          code.language-markup
+            :escape
+              <!-- Titles & URLs -->
+              Stupid Robot !
+                http://lorempicsum.com/futurama/450/400/1
+
+              Crazy monkey !
+                http://lorempicsum.com/futurama/450/400/2
+
+              Dat trick !
+                http://www.gifbin.com/bin/102015/1444064429_pope_francis_table_cloth_trick.gif
+              
+              When you don't know how fork() works !
+                http://lorempicsum.com/futurama/450/400/4
+
+
+      section()
+        h2 Création du principal container
+        ul
+          li Mettre toutes les <u>div</u> (gag) dans une nouvelle <u>div</u> ayant <i>l'id</i>  "container".
+
+      section(class="left")
+        h2 Création du nav
+        ul
+          li Créer un nouvelle balise <u>nav</u> à la suite de div#container
+          li À l'intérieur de nav, vous devez listez d'autres gags.
+          li Pour cela, utiliser le tag <u>ul</u> pour définir une liste et la tag <u>li</u> pour définir un item de cette liste. 
+          li.bullet Chaque li aura la class "tiny-gag". Cette li contiendra un titre <u>h4</u> ainsi qu'un balise <u>img</u> représentant l'image.
+
+        pre
+          code.language-markup
+            :escape
+              <!-- Titles & URLs -->
+              When you're the only girl at TN !
+                http://lorempicsum.com/futurama/450/200/5
+
+              When the SIC exam is arriving ...
+                http://lorempicsum.com/futurama/450/200/3
+
+              Me at Project management exam (CTRL+F)!
+                <!-- L'image se trouve dans le dossier du fichier HTML ! -->
+                ./fight.gif
+
+
+      section(class="animated-background fullscreen success")
+        h1 You succeed !
+        h2 Dont' forget to validate your document:
+        <a href="https://validator.w3.org/" target="_blank">W3C</a>
+        br
+        <h3>Pour les plus rapides, ajoutez le logo 9gag en haut du document HTML</h3>
+
+
+
+
+
+    script(src='build/build.js')

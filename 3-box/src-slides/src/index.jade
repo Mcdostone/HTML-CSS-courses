@@ -1,0 +1,252 @@
+doctype html
+html
+  head
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1')
+    title HTML - Introduction
+
+    link(href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet")
+    link(rel='stylesheet', type='text/css', href='build/build.css')
+
+  body
+
+    article
+
+      section
+        h1 Formation HTML5/CSS3
+        h3 TELECOM Nancy Services
+        img(style="width: 40%" src="./images/logo-intro.png")
+
+        p(class="author") <a href="https://github.com/Mcdostone/HTML-CSS" target="_blank">@mcdostone (Yann Prono)</a>
+
+      section(class="fullscreen animated-background confused")
+        h1 Le modèle de box ?
+
+      section()
+        h1 Le modèle de box
+        ul
+          li Chaque élément est en fait une boite rectangulaire
+          li On distingue 2 types de boites:
+          br
+          li <strong>inline</strong>: Les éléments peuvent être sur la même ligne (a)
+          li La taille des boites inline dépend du contenu
+          br
+          li <strong>block</strong>: Un seul block par ligne (h4, h3)
+          li La hauteur dépend du contenu
+          li Un block prend toute la largeur possible !
+          br
+          li <a href="example-1.html" target="_blank">Exemple</a>
+
+      section
+        h1 Les règles CSS
+        ul
+          li 
+            pre
+              code.language-css.
+                X {
+                  display: block | inline | inline-block;
+                  width: 35%; /** 35% de l'élement parent */
+                  height: 40px;
+                }
+       section(class="animated-background cool")
+        h2 <i>OK, cool on peut maintenant donner des dimensions à nos éléments !</i>
+
+        h3 Mais tu n'as pas encore tout vu Jamy !
+
+      section
+        h1 Les marges
+        p Il est possible d'appliquer des marges à l'intérieur (padding)
+        p et à l'extérieur(margin) de notre box.
+        p Ces marges peuvent s'exprimer en % ou en px.
+        br
+
+        pre
+          code.language-css.
+            /** Elément centré */
+            X {
+              display: inline-block;
+              width: 50%;
+              margin-left: 25%;
+              /** Marge intérieur de 10 px tout autour de mon élement */
+              padding: 10px;
+            }
+
+      section
+        h1 Les bordures
+        ul 
+          li Une bordure est définie par une taille, une couleur et un type de bordure.
+          li 
+            pre
+              code.language-css.
+                /** Elément centré */
+                X {
+                  display: inline-block;
+                  width: 50%;
+                  margin-left: 25%;
+                  border: 3px solid orange;
+                  padding: 10px;
+                }
+          li Seulement il y a un problème !
+
+      section(class="animated-background fullscreen calculating")
+        h1 Attention à la taille de chaque box !
+      section
+
+        <img src="https://www.washington.edu/accesscomputing/webd2/student/unit3/images/boxmodel.gif">
+        p Imaginons que l'on souhaite un élément qui prenne toute la largeur:
+          pre
+            code.language-css.
+              X {
+                display: inline-block;
+                width: 100%;
+                height: auto;
+                border: 5px solid orange;
+                padding: 10px;
+              }
+        p Notre box va dépasser de (10*2 + 5*2) = 30px
+        p La solution: box-sizing: border-box;
+
+      section
+        h1 Exemples
+        pre
+          code.language-css.
+            /** Enleve les marges de base */
+            html, body {
+              margin: 0;
+              padding: 0;
+            }
+            header {
+              display: block;
+              width: 80%;
+              /** S'adapte au contenu => 78px*/
+              height: auto;
+              margin: auto; /** Centre automatiquement */
+            }
+            header a {
+              display: inline-block;
+              padding: 4px 16px;
+              /** 70px + 2*4 = 78px de hauteur */
+              height: 70px;
+              line-height: 70px;
+            }
+
+      section(class="animated-background fix")
+        h1 Le CSS, des fois c'est chiant !
+        h3 En cas de problèmes, n'hésitez pas à sortir l'inspecteur
+        h3 et les couleurs moches !
+        h3 (En tout cas, c'est comme ça que je fais)
+
+      section(class="animated-background fullscreen yeah")
+        h1 Time to code !
+        h3 Ouvrer tous les fichiers présents dans le dossier exercices/
+      section(class="left")
+        h2 Annuler les effets du navigateur
+        ul
+
+          li Initialiser le margin et padding des balises html et body à 0.
+          li Annuler le padding et margin de l'effet liste à puce.
+
+        pre
+          code.language-css.
+            html, body {
+              margin: 0;
+              padding: 0;
+            }
+
+            ul {
+              padding: 0;
+              margin: 0;
+            }
+
+      section(class="left")
+        h2 Travaillons le header
+        ul
+          li le header doit prendre 100% de la largeur de la page.
+          li Ajouter une marge en bas (margin-bottom) de 20px pour aérer le header des gags.
+          br
+          li Enlever le surlignement des liens dans le header (voir  <i>text-decoration</i>).
+          li Rendre inline-block les liens.
+          li Donner une hauteur de 50px au liens.
+          li Appliquer la propriété suivante au liens du header.
+            pre
+              code.language-css.
+                header a {
+                  line-height: 50px;
+                }
+          li Appliquer une marge left/right de 20px.
+          li Changer la couleur des liens du header avec cette valeur : rgb(200,200,200).
+
+      section
+        h2 Petit supplément (non développé ici)
+        p Il existe de pseudo-selecteurs permettant de spécifier les règles à appliquer suivant un état:
+        ul
+          li :hover => lorsque la souris passe au dessus de l'élément
+          li :first-letter => sélectionne la première lettre de l'élément ...
+          br
+          li Ajouter le code suivant dans votre CSS:
+            pre
+              code.language-css.
+                /** Lorsque je survole un lien du header ... */
+                header a:hover {
+                  color: white;
+                }
+      section(class="left")
+        h2 Le container
+        ul
+          li Le container doit prendre 60% de la largeur de la page (en partant de la gauche). Il restera donc 40% pour l'élément nav.
+          li Ajouter un padding-left de 20% avec le container ayant toujours 60% de largeur.
+          li Faire en sorte que chaque image de Gag prenne 100% de la place disponible dans le container.
+          li Le fond du titre et l'image doivent être alignés !
+          li Ajouter 50px de margin-bottom pour chaque gag.
+          li Ajouter 10px de padding pour le titre d'un gag.
+
+      section(class="left")
+        h2 Le nav
+        ul 
+          li Donner un padding left/right de 50px au nav.
+          li Centrer les titres grâce à la propriété text-align.
+          li Les images dans le nav doivent prendre toute la largeur disponible.
+          li Ajouter une marge en bas de 30px pour chaque tiny-gag.
+          li Il reste 40% de place à la nav à côté du container, essayer de le placer !
+
+      section(class="animated-background shit fullscreen")
+        h1 Est-ce que cela marche ?
+
+      section
+        h1 Eh bien non ?
+        h3 Pourquoi ?
+        p Démonstration avec l'inspecteur
+
+      section
+        h1 Les floats
+        ul
+          li Autre manière de positionner les éléments
+          li Un élément peut flotter à gauche ou à droite.
+          li Un élément peut forcer un élément à ne pas flotter à coté de lui !
+          li
+            pre
+              code.language-css.
+                X {
+                  /** Flotte à gauche */
+                  float: left;
+                  /** Rien ne pas flotter à ma droite */
+                  clear: right;
+                }
+
+      section(class="left")
+        h1 Revenons au problème !
+        p Le fait d'utiliser float va nous permettre de supprimer cette marge automatique !
+        br
+        ul
+          li Rendre le container et le nav flottable à gauche !
+          li Ajouter une marge de 2% à gauche au nav pour séparer nos 2 éléments flottants. Par conséquent, adapter la taille du nav pour la centrer !
+
+      section(class="fullscreen animated-background pizza")
+        h1 Nice job !
+        h1(class="citation") "So beautiful"
+
+        h3 Pour les plus rapides, essayez d'aligner correctement tous les éléments
+
+
+
+    script(src='build/build.js')

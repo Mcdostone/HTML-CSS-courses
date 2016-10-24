@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>HTML - Introduction</title>
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="build/build.css">
+  </head>
+  <body>
+    <article>
+      <section>
+        <h1>Formation HTML5/CSS3</h1>
+        <h3>TELECOM Nancy Services</h3><img style="width: 40%" src="./images/logo-intro.png">
+        <p class="author"><a href="https://github.com/Mcdostone/HTML-CSS" target="_blank">@mcdostone (Yann Prono)</a></p>
+      </section>
+      <section class="fullscreen animated-background confused">
+        <h1>Le modèle de box ?</h1>
+      </section>
+      <section>
+        <h1>Le modèle de box</h1>
+        <ul>
+          <li>Chaque élément est en fait une boite rectangulaire</li>
+          <li>On distingue 2 types de boites:</li><br>
+          <li><strong>inline</strong>: Les éléments peuvent être sur la même ligne (a)</li>
+          <li>La taille des boites inline dépend du contenu</li><br>
+          <li><strong>block</strong>: Un seul block par ligne (h4, h3)</li>
+          <li>La hauteur dépend du contenu</li>
+          <li>Un block prend toute la largeur possible !</li><br>
+          <li><a href="example-1.html" target="_blank">Exemple</a></li>
+        </ul>
+      </section>
+      <section>
+        <h1>Les règles CSS</h1>
+        <ul>
+          <li>
+            <pre><code class="language-css">X {
+  display: block | inline | inline-block;
+  width: 35%; /** 35% de l'élement parent */
+  height: 40px;
+}</code></pre>
+          </li>
+        </ul>
+      </section>
+      <section class="animated-background cool">
+        <h2><i>OK, cool on peut maintenant donner des dimensions à nos éléments !</i></h2>
+        <h3>Mais tu n'as pas encore tout vu Jamy !</h3>
+      </section>
+      <section>
+        <h1>Les marges</h1>
+        <p>Il est possible d'appliquer des marges à l'intérieur (padding)</p>
+        <p>et à l'extérieur(margin) de notre box.</p>
+        <p>Ces marges peuvent s'exprimer en % ou en px.</p><br>
+        <pre><code class="language-css">/** Elément centré */
+X {
+  display: inline-block;
+  width: 50%;
+  margin-left: 25%;
+  /** Marge intérieur de 10 px tout autour de mon élement */
+  padding: 10px;
+}
+</code></pre>
+      </section>
+      <section>
+        <h1>Les bordures</h1>
+        <ul>
+          <li>Une bordure est définie par une taille, une couleur et un type de bordure.</li>
+          <li>
+            <pre><code class="language-css">/** Elément centré */
+X {
+  display: inline-block;
+  width: 50%;
+  margin-left: 25%;
+  border: 3px solid orange;
+  padding: 10px;
+}</code></pre>
+          </li>
+          <li>Seulement il y a un problème !</li>
+        </ul>
+      </section>
+      <section class="animated-background fullscreen calculating">
+        <h1>Attention à la taille de chaque box !</h1>
+      </section>
+      <section><img src="https://www.washington.edu/accesscomputing/webd2/student/unit3/images/boxmodel.gif">
+        <p>Imaginons que l'on souhaite un élément qui prenne toute la largeur:
+          <pre><code class="language-css">X {
+  display: inline-block;
+  width: 100%;
+  height: auto;
+  border: 5px solid orange;
+  padding: 10px;
+}</code></pre>
+        </p>
+        <p>Notre box va dépasser de (10*2 + 5*2) = 30px</p>
+        <p>La solution: box-sizing: border-box;</p>
+      </section>
+      <section>
+        <h1>Exemples</h1>
+        <pre><code class="language-css">/** Enleve les marges de base */
+html, body {
+  margin: 0;
+  padding: 0;
+}
+header {
+  display: block;
+  width: 80%;
+  /** S'adapte au contenu => 78px*/
+  height: auto;
+  margin: auto; /** Centre automatiquement */
+}
+header a {
+  display: inline-block;
+  padding: 4px 16px;
+  /** 70px + 2*4 = 78px de hauteur */
+  height: 70px;
+  line-height: 70px;
+}
+</code></pre>
+      </section>
+      <section class="animated-background fix">
+        <h1>Le CSS, des fois c'est chiant !</h1>
+        <h3>En cas de problèmes, n'hésitez pas à sortir l'inspecteur</h3>
+        <h3>et les couleurs moches !</h3>
+        <h3>(En tout cas, c'est comme ça que je fais)</h3>
+      </section>
+      <section class="animated-background fullscreen yeah">
+        <h1>Time to code !</h1>
+        <h3>Ouvrer tous les fichiers présents dans le dossier exercices/</h3>
+      </section>
+      <section class="left">
+        <h2>Annuler les effets du navigateur</h2>
+        <ul>
+          <li>Initialiser le margin et padding des balises html et body à 0.</li>
+          <li>Annuler le padding et margin de l'effet liste à puce.</li>
+        </ul>
+        <pre><code class="language-css">html, body {
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+}
+</code></pre>
+      </section>
+      <section class="left">
+        <h2>Travaillons le header</h2>
+        <ul>
+          <li>le header doit prendre 100% de la largeur de la page.</li>
+          <li>Ajouter une marge en bas (margin-bottom) de 20px pour aérer le header des gags.</li><br>
+          <li>Enlever le surlignement des liens dans le header (voir  <i>text-decoration</i>).</li>
+          <li>Rendre inline-block les liens.</li>
+          <li>Donner une hauteur de 50px au liens.</li>
+          <li>Appliquer la propriété suivante au liens du header.
+            <pre><code class="language-css">header a {
+  line-height: 50px;
+}</code></pre>
+          </li>
+          <li>Appliquer une marge left/right de 20px.</li>
+          <li>Changer la couleur des liens du header avec cette valeur : rgb(200,200,200).</li>
+        </ul>
+      </section>
+      <section>
+        <h2>Petit supplément (non développé ici)</h2>
+        <p>Il existe de pseudo-selecteurs permettant de spécifier les règles à appliquer suivant un état:</p>
+        <ul>
+          <li>:hover => lorsque la souris passe au dessus de l'élément</li>
+          <li>:first-letter => sélectionne la première lettre de l'élément ...</li><br>
+          <li>Ajouter le code suivant dans votre CSS:
+            <pre><code class="language-css">/** Lorsque je survole un lien du header ... */
+header a:hover {
+  color: white;
+}</code></pre>
+          </li>
+        </ul>
+      </section>
+      <section class="left">
+        <h2>Le container</h2>
+        <ul>
+          <li>Le container doit prendre 60% de la largeur de la page (en partant de la gauche). Il restera donc 40% pour l'élément nav.</li>
+          <li>Ajouter un padding-left de 20% avec le container ayant toujours 60% de largeur.</li>
+          <li>Faire en sorte que chaque image de Gag prenne 100% de la place disponible dans le container.</li>
+          <li>Le fond du titre et l'image doivent être alignés !</li>
+          <li>Ajouter 50px de margin-bottom pour chaque gag.</li>
+          <li>Ajouter 10px de padding pour le titre d'un gag.</li>
+        </ul>
+      </section>
+      <section class="left">
+        <h2>Le nav</h2>
+        <ul>
+          <li>Donner un padding left/right de 50px au nav.</li>
+          <li>Centrer les titres grâce à la propriété text-align.</li>
+          <li>Les images dans le nav doivent prendre toute la largeur disponible.</li>
+          <li>Ajouter une marge en bas de 30px pour chaque tiny-gag.</li>
+          <li>Il reste 40% de place à la nav à côté du container, essayer de le placer !</li>
+        </ul>
+      </section>
+      <section class="animated-background shit fullscreen">
+        <h1>Est-ce que cela marche ?</h1>
+      </section>
+      <section>
+        <h1>Eh bien non ?</h1>
+        <h3>Pourquoi ?</h3>
+        <p>Démonstration avec l'inspecteur</p>
+      </section>
+      <section>
+        <h1>Les floats</h1>
+        <ul>
+          <li>Autre manière de positionner les éléments</li>
+          <li>Un élément peut flotter à gauche ou à droite.</li>
+          <li>Un élément peut forcer un élément à ne pas flotter à coté de lui !</li>
+          <li>
+            <pre><code class="language-css">X {
+  /** Flotte à gauche */
+  float: left;
+  /** Rien ne pas flotter à ma droite */
+  clear: right;
+}
+</code></pre>
+          </li>
+        </ul>
+      </section>
+      <section class="left">
+        <h1>Revenons au problème !</h1>
+        <p>Le fait d'utiliser float va nous permettre de supprimer cette marge automatique !</p><br>
+        <ul>
+          <li>Rendre le container et le nav flottable à gauche !</li>
+          <li>Ajouter une marge de 2% à gauche au nav pour séparer nos 2 éléments flottants. Par conséquent, adapter la taille du nav pour la centrer !</li>
+        </ul>
+      </section>
+      <section class="fullscreen animated-background pizza">
+        <h1>Nice job !</h1>
+        <h1 class="citation">"So beautiful"</h1>
+        <h3>Pour les plus rapides, essayez d'aligner correctement tous les éléments</h3>
+      </section>
+    </article>
+    <script src="build/build.js"></script>
+  </body>
+</html>
